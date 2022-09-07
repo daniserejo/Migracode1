@@ -1,4 +1,6 @@
 
+/*  exercise C-comparison-operations */
+
 var studentCount = 16;
 var mentorCount = 9;
 var moreStudentsThanMentors = studentCount > mentorCount
@@ -11,7 +13,16 @@ var personA = "Daniel";
 var personB = "Irina";
 var sameName = personA == personB;
 
-/*  exercise 2 */
+console.log("Are there more students than mentors?", moreStudentsThanMentors);
+console.log("Is there enough space in the room for all students and mentors?", enoughSpaceInRoom);
+console.log("Do person A and person B have the same name?", sameName)
+
+
+
+
+
+/*     Exercise E-conditionals    */
+
 
 var name = "Daniel";
 var danielsRole = "mentor"
@@ -20,12 +31,34 @@ if (danielsRole == "mentor"){
 }
 
 else if (danielsRole == "student") {
-    console.log(`Hi, Im ${name} and I work as ${danielsRole}`)
-} else {
-    console.log(`What are you doing here?`);
+    console.log(`Hi, Im ${name} and I'm a ${danielsRole}`)
 }
 
-/* exercise 3 */
+
+
+
+/* exercise F - Logical operators */
+
+
+var htmlLevel = 8;
+var cssLevel = 4;
+
+
+var htmlLevelAbove5 = htmlLevel > 5
+var cssLevelAbove5 = cssLevel > 5
+
+var cssAndHtmlAbove5 = cssLevel > 5 && htmlLevel > 5;
+var cssOrHtmlAbove5 = cssLevel > 5 || htmlLevel > 5;
+
+
+console.log("Is Html knowledge above 5?", htmlLevelAbove5);
+console.log("Is CSS knowledge above 5?", cssLevelAbove5);
+console.log("Is Html And CSS knowledge above 5?", cssAndHtmlAbove5);
+console.log("Is either Html or CSS knowledge above 5?",cssOrHtmlAbove5);
+
+
+
+/*         F-logic. 2   */
 
 function isNegative(number){
     return number<0 ? true : false
@@ -38,14 +71,10 @@ function isShortName(name){
     return name.length<=6;
 }
 
-
 function startsWithD(name) {
     return name[0] ==="D"
 }
 
-/* 
-  DO NOT EDIT BELOW THIS LINE
-  --------------------------- */
 
 console.log("Is -10 is a negative number?", isNegative(-10));
 console.log("Is 5 a negative number?", isNegative(5));
@@ -53,10 +82,35 @@ console.log("Is 10 in the range 5-10?", isBetween5and10(10));
 console.log("Is Daniel a short name?", isShortName("Daniel"));
 console.log("Does Daniel start with 'D'?", startsWithD("Daniel"));
 
+/*    G conditions 01  */
+
+function negativeOrPositive(number) {
+    return number<0 ? "negative" : "positive"
+  }
+  var number1 = 5;
+  var number2 = -1;
+  var number3 = 0;
+  console.log(number1 + " is " + negativeOrPositive(number1));
+  console.log(number2 + " is " + negativeOrPositive(number2));
+  console.log(number3 + " is " + negativeOrPositive(number3));
+
+
+
+/*    G- conditions 02   */
+
+function studentPassed(grade) {
+    return grade < 50 ? "Failed" : "passed"
+  }
+  var grade1 = 49;
+  var grade2 = 50;
+  var grade3 = 100;
+  console.log("'" + grade1 + "': " + studentPassed(grade1))
+  console.log("'" + grade2 + "': " + studentPassed(grade2))
+  console.log("'" + grade3 + "': " + studentPassed(grade3))
 
 
 /*
-  Conditionals exercise 03 
+  G - Conditionals exercise 03 
   ---------------------------------
   Write a function that checks if a student has passed
   - if the mark is 80 or higher then the grade is "A"
@@ -79,9 +133,7 @@ function calculateGrade(mark) {
     }
 }
 
-/* 
-DO NOT EDIT BELOW THIS LINE
---------------------------- */
+
 var grade1 = 49;
 var grade2 = 90;
 var grade3 = 70;
@@ -95,7 +147,7 @@ console.log("'" + grade4 + "': " + calculateGrade(grade4));
 
 
 /*
-  Conditionals
+  G  -  Conditionals ex. 04
   ---------------------------------
   Write a function that checks if a sentence contains the word "code"
   - if the sentence contains the word "code" then return true
@@ -107,9 +159,7 @@ function containsCode(sentence) {
     return sentence.includes("code") ? true : false
 }
 
-/* 
-DO NOT EDIT BELOW THIS LINE
---------------------------- */
+
 var sentence1 = "code your future";
 var sentence2 = "draw your future";
 var sentence3 = "design your future";
@@ -118,13 +168,6 @@ console.log("'" + sentence1 + "': " + containsCode(sentence1))
 console.log("'" + sentence2 + "': " + containsCode(sentence2))
 console.log("'" + sentence3 + "': " + containsCode(sentence3))
 
-
-
-/* Write a function that:
-- Takes one number n as a parameter
-- Adds all numbers from 0 to n. For example, if the input is 3, the output should be 0 + 1 + 2 + 3
-- You should use a while loop
-*/
 
 let n = 10;
 let sum= 0
@@ -141,7 +184,37 @@ function sumTillNum(num){
 console.log("Sum from 0 to " + n + " is: " + sumTillNum(n));
 
 
-/* Exercise M 
+/* exerc. K    */
+
+let n = 10;
+let sum=0,i=1
+function sumTillNum(num){
+    while(i<=num) {
+        sum+=i;
+        i++
+    }//your code here
+    return sum;
+}
+console.log("Sum from 0 to " + n + " is: " + sumTillNum(n));
+
+
+/*      Ex. L */
+
+let n2 = 10;
+function sumTillNum(num){
+    let sum = 0 //your code here
+    for (let i=1; i < =num; i++) {
+        sum += i
+    }
+    return sum
+}
+console.log("Sum from 0 to " + n + " is: " + sumTillNum(n));
+
+
+
+
+/*    Exercise M   */
+
 
 /*
 	Write a function that receives an array of string, and console.log all strings that start with letter 'T'
@@ -169,6 +242,9 @@ const daysOfWeek = [
 
   showDaysOfWeek(daysOfWeek, "T")
 
+
+
+
   // 1. Create a function that will find the largest number in an array. Return the largest one - use loop and if statement comparing numbers 
 const arr = [2, 45, 3, 67, 34, 567, 34, 345, 123];
 
@@ -187,7 +263,7 @@ largestNumer(arr)
 
 // Create an array of your favorite foods (store it in a variable); check whether "falafel" is in the array (whether the array includes that), if not add it to the end of the array if yes console.log "mnam mnam". 
 // Go through the array if that array contains a food starting with letter "I" ask (prompt question "Is it icecream?") if the answer is yes - console.log ("I knew it") if not then ask what it is (prompt) 
-// Find the possition of the element and then replace it with "icecream" 
+// Find the position of the element and then replace it with "icecream" 
 
 const price = 5
 function buyFalafel(budget){
